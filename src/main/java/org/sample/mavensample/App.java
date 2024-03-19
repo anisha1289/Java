@@ -1,5 +1,6 @@
-package org.sample.mavensample;
 
+package org.sample.mavensample;
+import java.util.Scanner
 /**
  * Hello world!
  *
