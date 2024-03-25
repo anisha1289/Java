@@ -16,7 +16,7 @@ pipeline{
              
               steps{
                   echo 'compiling..'
-                  sh 'mvn compile'
+                  bat 'mvn compile'
 	      }
           }
           stage('CodeReview'){
@@ -24,14 +24,14 @@ pipeline{
               steps{
 		    
 		  echo 'codeReview'
-                  sh 'mvn pmd:pmd'
+                  bat 'mvn pmd:pmd'
               }
           }
            stage('UnitTest'){
 		  
               steps{
 	         echo 'Testing'
-                  sh 'mvn test'
+                  bat 'mvn test'
               }
                post {
                success {
@@ -42,7 +42,7 @@ pipeline{
            stage('MetricCheck'){
               
               steps{
-                  sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
+                  bat 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
               }
               
           }
@@ -50,7 +50,7 @@ pipeline{
 		  
               steps{
 		  
-                  sh 'mvn package'
+                  bat 'mvn package'
               }
           }
 	     
